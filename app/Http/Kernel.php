@@ -43,8 +43,7 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Logging::class,
-            'HttpHeaders: Come Work For US!',
-            \App\Http\Middleware\BasicAuth::class,   
+            'HttpHeaders: Come Work For US!',  
         ],
     ];
 
