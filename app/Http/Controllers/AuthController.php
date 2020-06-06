@@ -52,12 +52,17 @@ class AuthController extends Controller
      *
      * @return [string] message
      */
-    public function logout () {
+    public function logout(Request $request) {
 
-    	$token = Auth::user()->token();
+    	$token = $request->user()->token();
     	$token->revoke();
 
-    	$response = array('msg' =>'You have been succesfully logged out!');
+    	$response = array('message' =>'You have been succesfully logged out!');
     	return response()->json($response, 200);
+    }  
+
+    public function unauthorized() {
+    	$response = array('message' =>'Access Denied');
+    	return response()->json($response, 401);
     }
 }
